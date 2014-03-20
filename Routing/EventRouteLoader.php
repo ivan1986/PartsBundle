@@ -5,11 +5,9 @@ namespace Ivan1986\PartsBundle\Routing;
 use Ivan1986\PartsBundle\Event\RouteEvent;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\RouteCollection;
 
-class EventRouteLoader extends Loader {
-
+class EventRouteLoader extends Loader
+{
     /** @var EventDispatcherInterface */
     private $events;
 
@@ -22,6 +20,7 @@ class EventRouteLoader extends Loader {
     {
         $event = new RouteEvent($this);
         $this->events->dispatch('route.load', $event);
+
         return $event->getCollection();
     }
 

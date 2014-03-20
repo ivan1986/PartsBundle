@@ -7,8 +7,8 @@ use Knp\Menu\ItemInterface;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Security\Core\SecurityContext;
 
-class ConfigureMenuEvent extends Event {
-
+class ConfigureMenuEvent extends Event
+{
     /** @var FactoryInterface */
     protected $factory;
     /** @var SecurityContext */
@@ -18,9 +18,10 @@ class ConfigureMenuEvent extends Event {
 
     /**
      * @param \Knp\Menu\FactoryInterface $factory
-     * @param \Knp\Menu\ItemInterface $menu
+     * @param \Knp\Menu\ItemInterface    $menu
      */
-    public function __construct(FactoryInterface $factory, SecurityContext $security, ItemInterface $menu) {
+    public function __construct(FactoryInterface $factory, SecurityContext $security, ItemInterface $menu)
+    {
         $this->factory = $factory;
         $this->security = $security;
         $this->menu = $menu;
@@ -50,4 +51,4 @@ class ConfigureMenuEvent extends Event {
         return $this->security;
     }
 
-} 
+}

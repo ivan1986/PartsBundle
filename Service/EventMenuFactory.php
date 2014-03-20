@@ -8,8 +8,8 @@ use Knp\Menu\ItemInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Security\Core\SecurityContext;
 
-class EventMenuFactory {
-
+class EventMenuFactory
+{
     /** @var FactoryInterface */
     protected $factory;
     /** @var SecurityContext */
@@ -17,7 +17,8 @@ class EventMenuFactory {
     /** @var EventDispatcherInterface */
     private $events;
 
-    public function __construct(FactoryInterface $factory, SecurityContext $security, EventDispatcherInterface $events) {
+    public function __construct(FactoryInterface $factory, SecurityContext $security, EventDispatcherInterface $events)
+    {
         $this->factory = $factory;
         $this->security = $security;
         $this->events = $events;
@@ -26,14 +27,15 @@ class EventMenuFactory {
     /**
      * Add items for exists menu
      *
-     * @param string $name Event Name
-     * @param ItemInterface $menuItem Menu Item
+     * @param  string        $name     Event Name
+     * @param  ItemInterface $menuItem Menu Item
      * @return ItemInterface
      */
     public function addItems($name, ItemInterface $menuItem)
     {
         $this->events->dispatch('menuConfigure.'.$name,
             new ConfigureMenuEvent($this->factory, $this->security, $menuItem));
+
         return $menuItem;
     }
 
