@@ -1,0 +1,10 @@
+services:
+    ivan1986_parts.routing_loader:
+        class: Ivan1986\PartsBundle\Routing\EventRouteLoader
+        arguments: [ '@event_dispatcher' ]
+        tags:
+            - { name: routing.loader }
+
+    ivan1986_parts.eventmenu_factory:
+        class: Ivan1986\PartsBundle\Service\EventMenuFactory
+        arguments: [ '@knp_menu.factory', '@security.context', '@event_dispatcher' ]

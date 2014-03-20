@@ -1,0 +1,25 @@
+{
+    "name": "ivan1986/parts",
+    "type": "symfony-bundle",
+    "description": "Tools for merge sites from many bundles",
+    "keywords": ["event","routing","menu"],
+    "homepage": "https://github.com/ivan1986/PartsBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Borzenkov",
+            "email": "ivan.borzenkov@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.1",
+        "symfony/dependency-injection": "~2.1",
+        "symfony/event-dispatcher": "~2.1",
+        "symfony/assetic-bundle": "~2.1",
+        "knplabs/knp-menu-bundle": "~2.1"
+    },
+    "autoload": {
+        "psr-0": { "Ivan1986\\PartsBundle": "" }
+    },
+    "target-dir": "Ivan1986/PartsBundle"
+}
