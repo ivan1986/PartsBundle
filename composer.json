@@ -16,7 +16,7 @@
         "symfony/dependency-injection": "~2.1",
         "symfony/event-dispatcher": "~2.1",
         "symfony/assetic-bundle": "~2.1",
-        "knplabs/knp-menu-bundle": "~2.1"
+        "knplabs/knp-menu-bundle": "*"
     },
     "autoload": {
         "psr-0": { "Ivan1986\\PartsBundle": "" }
