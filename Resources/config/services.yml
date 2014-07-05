@@ -1,7 +1,13 @@
 services:
-    ivan1986_parts.routing_loader:
+    ivan1986_parts.routing_loader.events:
         class: Ivan1986\PartsBundle\Routing\EventRouteLoader
         arguments: [ '@event_dispatcher' ]
+        tags:
+            - { name: routing.loader }
+
+    ivan1986_parts.routing_loader.annotation:
+        class: Ivan1986\PartsBundle\Routing\AllAnnotationLoader
+        arguments: [ '%kernel.bundles%' ]
         tags:
             - { name: routing.loader }
 
